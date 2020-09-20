@@ -1,5 +1,11 @@
-# ZSK - Kurs programowania w PHP
+# ZSK - PHP
 
 1. Zmienne
 2. Składnia heredoc/nowdoc
 3. Interpolacja/ zmienne superglobalne
+
+# ZSK - JS
+
+1. Funkcje natychmiastowe
+2. Wyrażenia funkcyjne
+3. Funkcje anonimowe
