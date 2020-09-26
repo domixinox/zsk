@@ -16,7 +16,6 @@
     $x = 0b1010;
     echo '<br>',$x,'<br>';
 
-    // deklaracja.edu.pl
     $x = $x << 2; // 101000(2)
 
     $x = 1;
