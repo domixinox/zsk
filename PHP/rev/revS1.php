@@ -50,7 +50,7 @@
         $num1 = 20;
         $num2 = 30;
         
-        // -1 Jeżeli liczba po prawej jest większa, 0 dla równych, 1 gdy po prawej większa
+        // -1 Jeżeli liczba po prawej jest większa, 0 dla równych, 1 gdy po lewej większa
         echo "<br><br>Operator spaceship: "."<strong>".($num1 <=> $num2)."</strong>";
 
         echo "<br><br>Maksymalny rozmiar inta: ".PHP_INT_SIZE."<br>Maksymalna wartość inta: ".PHP_INT_MAX;
