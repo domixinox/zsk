@@ -7,6 +7,12 @@
     require "./import2.php";
     require_once "./import2.php";
 
+
+    // Local var in "import.php" file
+    echo "<br><br>", $local;
+
+    echo "<br><br>", __FILE__;
+
     echo "<br><br><br><br>";
 
     echo ucfirst("jAKUB"), "<br><br>", strtolower("STRING TO LOWER"), "<br><br>", strtoupper("string to upper"), "<br><br>";
@@ -33,6 +39,5 @@
 
     echo $wrap;
 
-    echo "<br>", var_dump($lorem), "<br>"
-
+    echo "<br>", var_dump($lorem), "<br>";
 ?>
