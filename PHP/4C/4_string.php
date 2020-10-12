@@ -46,5 +46,50 @@
     ob_clean();
 
     //del white spaces
+    $nameb = "Łukasz";
+    $name = "  Łukasz  ";
+
+    echo "Dlugosc Łukasza: ", strlen($nameb), "<br>";
+    echo "Dlugosc Łukasza z spacjami: ", strlen($nameb), "<br>";
+
+    echo "Dlugosc Łukasza (z polskimi znakami): ", mb_strlen($nameb), "<br>";
+
+    echo mb_strlen(ltrim($name));
+    echo mb_strlen(rtrim($name));
+    echo mb_strlen(trim($name));
+
+    echo "<br><br>";
+    
+    $address = "Poznan, ul. Polna, tel 555-555-555";
+
+    $search = strstr($address, "tel", true);
+    echo $search, "<br>";
+
+    $search = strstr($address, "tel", true);
+    echo $search, "<br>";
+
+    $search = stristr($address, "Tel", true);
+    echo $search, "<br>";
+
+    echo strstr("ZSK@gmail.com", "@");
+
+    $imie = "Janusz";
+    echo "<br>", substr($imie, 1); // anusz
+    echo "<br>", substr($imie, 1, 3); // anu
+
+
+    echo "<br><br>Domena: ", substr(substr("ZSK@gmail.com", '@'), 1);
+    
+    $replace = str_replace('%imie%', "Anna", "Masz na imie: %imie%");
+    echo $replace;
+
+    $login = "bączek";
+    $cenzura = array('ą', 'ć', 'ę', 'ń', 'ó', 'ś', 'ż', 'ź');
+    $replace = array('a', 'c', 'e', 'n', 'o', 's', 'z', 'z');
+
+    $correct = str_replace($cenzura, $replace, $login);
+
+    echo "<br>Login: ", $login, "<br>Poprawny login: ", $correct;
+
 ?>
 
