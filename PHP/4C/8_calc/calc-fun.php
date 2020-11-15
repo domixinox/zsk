@@ -13,7 +13,7 @@
     }
 
     function div($x, $y){
-        return $x / $y;
+        return $y == 0 ? "Do not divide by zero" : $x / $y; 
     }
     
 ?>

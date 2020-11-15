@@ -22,49 +22,44 @@
 
                 <input type="number" name="y" id="" placeholder="y" step="0.01">
                 <input type="submit" name="submit" id="" value="=">
-                <input type="number" name="result" id="res" step="0.01" disabled>
+                <span id="res"></span>
             </form>
 
                 <?php
-                
                     if(isset($_POST['submit'])){
-                        if(!empty($_POST['x']) || $_POST['x'] == "0" && !empty($_POST['y']) || $_POST['y'] == "0" && isset($_POST['operator'])){
+                        if((!empty($_POST['x']) && !empty($_POST['y']) || $_POST['y'] == '0') && isset($_POST['operator'])){
                             require_once 'calc-fun.php';
                             $result = 0;
 
                             switch($_POST['operator']){
                                 case "+":
-                                    echo add($_POST['x'], $_POST['y']);
+                                    $result = add($_POST['x'], $_POST['y']);
                                 break;
 
                                 case "-":
-                                    echo sub($_POST['x'], $_POST['y']);
+                                    $result = sub($_POST['x'], $_POST['y']);
                                 break;
 
                                 case "*":
-                                    echo mul($_POST['x'], $_POST['y']);
+                                    $result = mul($_POST['x'], $_POST['y']);
                                 break;
 
                                 case "/":
-                                    echo div($_POST['x'], $_POST['y']);
-                                break;
-
-                                default:
-                                    echo "<hr>Choose operator";
+                                    $result = div($_POST['x'], $_POST['y']);
                                 break;
                             }
                             ?>
                             <script>
-                                document.querySelector("#res").value = <?php echo $result ?>;
+                                document.querySelector("#res").innerHTML = <?php echo $result ?>;
                             </script>
                             <?php
+
                         }else{
-                            echo "<hr>All inputs!";
+                            echo "<hr>All inputs you moron!";
                         }
                     }
 
                 ?>
         </div>
-
     </body>
 </html>
