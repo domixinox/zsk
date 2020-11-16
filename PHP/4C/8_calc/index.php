@@ -4,10 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator</title>
+
+        <style>
+            body{
+                height: 85vh;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: whitesmoke;
+            }
+
+            h1{
+                margin-bottom: 5rem;
+            }
+
+            ::placeholder{
+                color: #111;
+                font-weight: bolder;
+            }
+        </style>
     </head>
     <body>
 
-        <h1>Calc it</h1>
+        <h1>Calculator</h1>
         
         <div class="ff">
             <form action="" method="POST">
@@ -22,7 +43,7 @@
 
                 <input type="number" name="y" id="" placeholder="y" step="0.01">
                 <input type="submit" name="submit" id="" value="=">
-                <span id="res"></span>
+                <input type="number" name="" id="res" disabled>
             </form>
 
                 <?php
@@ -30,6 +51,10 @@
                         if((!empty($_POST['x']) && !empty($_POST['y']) || $_POST['y'] == '0') && isset($_POST['operator'])){
                             require_once 'calc-fun.php';
                             $result = 0;
+                            $equation = "ewrq";
+                            $x = $_POST['x'];
+                            $y = $_POST['y'];
+                            $operator = $_POST['operator'];
 
                             switch($_POST['operator']){
                                 case "+":
@@ -48,14 +73,18 @@
                                     $result = div($_POST['x'], $_POST['y']);
                                 break;
                             }
+
+                            $equation = "$x $operator $y = $result";
                             ?>
+
+                            <?php echo $equation ?>     
                             <script>
-                                document.querySelector("#res").innerHTML = <?php echo $result ?>;
+                                document.querySelector("#res").value = <?php echo $result ?>;
                             </script>
                             <?php
 
                         }else{
-                            echo "<hr>All inputs you moron!";
+                            echo "<hr>All inputs!";
                         }
                     }
 
